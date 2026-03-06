@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alderwood Holdings Limited Co. | UK Real Estate Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="keywords" content="UK real estate, property purchase, online property transfer, digital documentation, Alderwood Holdings, buy property online UK, property ownership transfer, real estate UK, digital conveyancing">
+    <meta name="description" content="Alderwood Holdings Limited Co. is a UK-based real estate platform where you can buy properties online, handle all documentation digitally, and securely transfer ownership — all in one place.">
+
+    <!-- Favicon -->
+    <link href="https://res.cloudinary.com/dgl1ls3dh/image/upload/v1760810934/properties/lvsl2wmedrdy8sogi4zz.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
+                <a href="index.html" class="navbar-brand">
+                    <h1 id="popname">Alderwood</h1>
+                </a>
+
+
+                        <!-- Icon Group -->
+         <div class="icongroup">
+        <!-- Profile Icon with Fancy Dropdown -->
+<span style="display: none;" class="userdata dropdown">
+  <a class="nav-link p-0 dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img id="nav-profile-img"
+         src="img/profile.png" 
+         alt="Profile"
+         class="rounded-circle border border-2"
+         style="width: 36px; height: 36px; object-fit: cover;">
+  </a>
+  <ul style="cursor: pointer;" class="dropdown-menu dropdown-menu-end custom-dropdown shadow-lg border-0 mt-2" aria-labelledby="profileDropdown">
+    <li><a class="dropdown-item" id="secondpopname" ><i class="bi bi-person me-2"></i> Profile</a></li>
+    <li><a class="dropdown-item" href="./tools/profile/index.html"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a></li>
+    <li><a class="dropdown-item" href="./tools/profile/index.html?tab=favorites"><i class="bi bi-heart me-2"></i> View Favorites</a></li>
+    <li class="admindata" style="display: none;"><a class="dropdown-item" href="./tools/profile/uploads.html"><i class="bi bi-cloud-arrow-up me-2"></i> Uploads</a></li>
+    <li><a class="dropdown-item"  href="./tools/profile/index.html?tab=orders"><i class="bi bi-gear me-2"></i> Purchase history</a></li>
+    <li><a class="dropdown-item"  href="./tools/profile/index.html?tab=settings"><i class="bi bi-gear me-2"></i> Settings</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li id="logout"><a class="dropdown-item logout-item" ><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+  </ul>
+</span>
+
+
+         <!-- Login Button -->
+          <span class="userinfo" style=" cursor: pointer;">
+        <a id="fancy-auth-open-btn">Login/Signin </a>
+         </span>  
+
+    </div>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <a href="property.html" class="nav-item nav-link">Properties</a>
+                         <div class="nav-item dropdown">
+                            <a href="legalinfo.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Support Center</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="tc.html" class="dropdown-item">Terms and conditions</a>
+                                <a href="legalinfo.html#privacy" class="dropdown-item">Privcacy policy</a>
+                                <a href="faqs.html" class="dropdown-item">FAQS</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+ <!-- error box Start -->
+<div id="errobox" style="position: fixed; display: none; z-index: 19999; background-color: #fff; height: 932px; " class="container-fluid py-5">
+
+    <div class="container py-5">
+        <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+            <h1 class="mb-5" id="errotype">Error type</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <!-- Removed instructional message -->
+                <div class="wow fadeIn" data-wow-delay="0.3s">
+                        <div class="row g-3">
+                              
+                              
+                              <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+                               <h5 class="mb-5" id="erromessage">Error message</h5>
+                              </div>
+                            
+                              <div class="col-12">
+                                <button id="close" class="btn btn-primary w-100 py-3" >Continue</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- error box End -->
+
+
+
+
+<!-- Signup/login Modal -->
+<div id="fancy-auth-modal">
+  <div class="fancy-auth-box" id="fancy-auth-box">
+    <span class="fancy-auth-close" id="fancy-auth-close">&times;</span>
+
+    <h2 id="fancy-auth-title">Login</h2>
+
+      <div class="col-md-12 text-center">
+               <button id="googlebtn" style="min-width: 300px ; border-radius: 30px;" class="custom-google-btn">
+               <img src="img/glogo.png" alt="Google" width="60" height="40">
+              <span> Google</span>
+              </button>
+                
+               <h2 style="margin-top: 10px;">Or</h2>
+            </div>
+
+    <form id="fancy-auth-form">
+      <!-- Signup-only fields -->
+      <div id="fancy-auth-signup-extra" style="display: none;">
+        <input type="text" id="fancy-auth-fullname" placeholder="Full Name" />
+        
+        <select id="fancy-auth-gender">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Common fields -->
+      <input type="email" id="fancy-auth-email" placeholder="Email" />
+      <div style="position: relative; width: 100%;">
+      <input type="password" id="fancy-auth-password" placeholder="Password" style="width: 100%; padding-right: 40px;" />
+        <i id="togglePassword" class="bi bi-eye-slash" 
+            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666;">
+        </i>
+      </div>
+
+      <button type="submit" id="fancy-auth-submit">Login</button>
+    </form>
+
+    <div class="fancy-auth-toggle">
+      Don't have an account?
+      <a id="fancy-auth-toggle-link" style="color: blue;">Sign up</a>
+    </div>
+      <div class="fancy-auth-toggle">
+       did you forget your 
+      <a href="forgot.html" style="color: blue;">password?</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Signup/login Modal -->
+
+
+
+
+   <!-- Hero Start -->
+<div class="container-fluid pb-5 hero-header bg-light mb-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-6">
+                <h1 class="display-1 mb-4 animated slideInRight">
+                    Buy & Transfer <span class="text-primary">Property</span> Online Worldwide
+                </h1>
+                <h5 class="d-inline-block border border-2 border-white py-3 px-5 mb-0 animated slideInRight">
+                    Seamless Global Real Estate Transactions — 100% Digitally Handled globally
+                </h5>
+            </div>
+            <div class="col-lg-6">
+                <div class="owl-carousel header-carousel animated fadeIn">
+                    <img class="img-fluid" src="img/h (2).jpg" alt="">
+                    <img class="img-fluid" src="img/h (3).jpg" alt="">
+                    <img class="img-fluid" src="img/h (1).jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 animated fadeIn">
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                        <i class="fas fa-file-signature text-primary"></i>
+                    </div>
+                    <h5 class="lh-base mb-0">Digital Legal Documentation</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                        <i class="fas fa-home text-primary"></i>
+                    </div>
+                    <h5 class="lh-base mb-0">Verified Global Properties</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                    </div>
+                    <h5 class="lh-base mb-0">Secure Ownership Transfer</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                        <i class="fas fa-laptop-house text-primary"></i>
+                    </div>
+                    <h5 class="lh-base mb-0">All-In-One Global Platform</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+   <!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid" src="img/h (2).jpg" height="200" alt="">
+                    </div>
+                    <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
+                        <img class="img-fluid h-75" src="img/about-2.jpg" alt="">
+                        <div class="h-25 d-flex align-items-center text-center bg-primary px-4">
+                            <h4 class="text-white lh-base mb-0">Secure Digital Property Transfers</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="mb-5"><span class="text-uppercase text-primary bg-light px-2">Our Story</span> & Vision</h1>
+                <p class="mb-4">
+                    Alderwood Holdings Limited Co. was founded with a mission to revolutionize the way real estate transactions are handled in the UK. We combine advanced technology, legal automation, and secure processing to make buying, selling, and transferring property faster, simpler, and more transparent.
+                </p>
+                <p class="mb-5">
+                    From verified property listings to full digital documentation and ownership transfer, our platform provides a seamless end-to-end experience — eliminating paperwork delays and outdated processes. We're building the future of real estate, one transaction at a time.
+                </p>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Trusted by UK Buyers</h6>
+                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Fully Digital Workflow</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Legal Support Included</h6>
+                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Transparent Pricing</h6>
+                    </div>
+                </div>
+                 <div class="d-flex align-items-center mt-5">
+  <a class="btn btn-primary px-4 me-2" href="about.html">Learn More</a>
+
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://www.facebook.com/DouglasandGordon" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://twitter.com/Douglas_Gordon" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://www.instagram.com/douglasandgordon" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2"
+     href="https://www.linkedin.com/company/Douglas_Gordon" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+  <!-- Feature Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+            <h1 class="mb-5">Why People <span class="text-uppercase text-primary bg-light px-2">Choose Us</span></h1>
+        </div>
+        <div class="row g-5 align-items-center text-center">
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <i class="fa fa-calendar-alt fa-5x text-primary mb-4"></i>
+                <h4>Fast Property Transactions</h4>
+                <p class="mb-0">Our platform drastically reduces the time it takes to complete property purchases, document handling, and ownership transfers — all online.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <i class="fa fa-tasks fa-5x text-primary mb-4"></i>
+                <h4>End-to-End Digital Workflow</h4>
+                <p class="mb-0">From search to signatures, everything is done on our secure digital platform — no in-person appointments or paperwork required.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <i class="fa fa-pencil-ruler fa-5x text-primary mb-4"></i>
+                <h4>Legally Verified Properties</h4>
+                <p class="mb-0">Every property listed is pre-verified for legal compliance, ownership, and documentation — ensuring peace of mind before purchase.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <i class="fa fa-user fa-5x text-primary mb-4"></i>
+                <h4>Trusted by Buyers & Sellers</h4>
+                <p class="mb-0">We’re committed to transparency, reliability, and customer success, earning the trust of real estate professionals and individuals alike.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <i class="fa fa-hand-holding-usd fa-5x text-primary mb-4"></i>
+                <h4>No Hidden Costs</h4>
+                <p class="mb-0">Our pricing is upfront and transparent, with no surprise fees or confusing legal charges — just a fair and clear service structure.</p>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <i class="fa fa-check fa-5x text-primary mb-4"></i>
+                <h4>Secure Legal Compliance</h4>
+                <p class="mb-0">All documentation and transfers are handled according to UK property laws, with expert oversight built into every transaction.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
+  <!-- Project Start -->
+<div class="container-fluid mt-5">
+    <div class="container mt-5">
+        <div class="row g-0">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                    <h1 class="text-white mb-5">Our Latest <span class="text-uppercase text-primary bg-light px-2">Closings</span></h1>
+                    <h4 class="text-white mb-0"><span class="display-1">6</span> Recent Property Transactions Across UK, USA & Canada</h4>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row g-0">
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/h (4).jpg" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">3-Bed Semi, London, UK</h4>
+                                <small class="text-white">Completed - Sep 2025</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/h (3).jpg" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">Luxury Flat, Manchester, UK</h4>
+                                <small class="text-white">Ownership Transferred</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/project-3.jpg" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">2-Bed Condo, Toronto, Canada</h4>
+                                <small class="text-white">Sale Finalized</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/h (2).jpg" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">Detached Home, Leeds, UK</h4>
+                                <small class="text-white">Documents Digitally Signed</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/hh.webp" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">Investment Property, Vancouver, Canada</h4>
+                                <small class="text-white">Listed on Alderwood</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.7s">
+                        <div class="project-item position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/hh.jpg" alt="">
+                            <a class="project-overlay text-decoration-none" href="#!">
+                                <h4 class="text-white">Modern Loft, New York, USA</h4>
+                                <small class="text-white">Ownership Transfer Complete</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mt-5">
+                        <a class="btn btn-primary px-4 me-2" href="property.html">Get started</a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://www.facebook.com/DouglasandGordon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://twitter.com/Douglas_Gordon" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://www.instagram.com/douglasandgordon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2" href="https://www.linkedin.com/company/Douglas_Gordon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="mb-5">Our Digital <span class="text-uppercase text-primary bg-light px-2">Services</span></h1>
+                <p>At Alderwood Holdings Limited Co., we simplify and secure the real estate journey across the UK, USA, and Canada. From listings to legal, our platform enables end-to-end digital property transactions worldwide — all managed from our UK headquarters.</p>
+                <p class="mb-5">We handle the paperwork, title transfers, and compliance with local laws — so you can buy, sell, or invest in property confidently and hassle-free.</p>
+                <div class="d-flex align-items-center bg-light">
+                   
+                    <a href="tel:+447308312486">
+                    <div class="btn-square flex-shrink-0 bg-primary" style="width: 100px; height: 100px;">
+                        <i class="fa fa-phone fa-2x text-white"></i>
+                    </div>
+                    </a>
+
+                    <div class="px-3">
+                        <h3>+44 7308 312 486</h3>
+                        <span>Call us direct 24/7 to book a free consultation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row g-0">
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                            <a href="#!" class="service-img position-relative mb-4">
+                                <img class="img-fluid w-100" src="img/service-1.jpg" alt="">
+                                <h3>Property Listings</h3>
+                            </a>
+                            <p class="mb-0">Browse verified properties across the UK, USA, and Canada. Each listing includes title details, legal history, and full documentation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                            <a href="#!" class="service-img position-relative mb-4">
+                                <img class="img-fluid w-100" src="img/service-2.jpg" alt="">
+                                <h3>Digital Document Handling</h3>
+                            </a>
+                            <p class="mb-0">We handle all contracts, purchase agreements, and identity verification online — safely and securely for all supported countries.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                            <a href="#!" class="service-img position-relative mb-4">
+                                <img class="img-fluid w-100" src="img/service-3.jpg" alt="">
+                                <h3>Legal Support & Transfer</h3>
+                            </a>
+                            <p class="mb-0">From conveyancing to title registration, we ensure every step complies with UK, USA, and Canadian property laws — overseen by local professionals.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.8s">
+                        <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                            <a href="#!" class="service-img position-relative mb-4">
+                                <img class="img-fluid w-100" src="img/service-4.jpg" alt="">
+                                <h3>Ownership Transfer</h3>
+                            </a>
+                            <p class="mb-0">We manage secure transfer of ownership between parties — buyers, sellers, or inheritors — fully online and compliant across all regions.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mt-5">
+                        <a class="btn btn-primary px-4 me-2" href="property.html">Get started</a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2"
+                           href="https://www.facebook.com/DouglasandGordon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2"
+                           href="https://twitter.com/Douglas_Gordon" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2 me-2"
+                           href="https://www.instagram.com/douglasandgordon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-square border-2"
+                           href="https://www.linkedin.com/company/Douglas_Gordon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+   
+
+   <!-- Testimonial Start -->
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-9">
+                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.2s">
+                    <div class="testimonial-item">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-md-6">
+                                <div class="testimonial-img">
+                                    <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="testimonial-text pb-5 pb-md-0">
+                                    <h3>Effortless Ownership Transfer</h3>
+                                    <p>Alderwood made buying my first home seamless. Everything was handled online, and I received full ownership documents in days, not weeks.</p>
+                                    <h5 class="mb-0">Sarah Patel</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-md-6">
+                                <div class="testimonial-img">
+                                    <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="testimonial-text pb-5 pb-md-0">
+                                    <h3>100% Secure & Transparent</h3>
+                                    <p>I was nervous about scams, but their platform provided full title verification and legal support. Zero surprises. Highly recommend!</p>
+                                    <h5 class="mb-0">David Mensah</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-md-6">
+                                <div class="testimonial-img">
+                                    <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="testimonial-text pb-5 pb-md-0">
+                                    <h3>Fast & Paperless</h3>
+                                    <p>From browsing to owning in under 10 days — no physical paperwork. The digital process was smooth, and support was responsive throughout.</p>
+                                    <h5 class="mb-0">Emily Thompson</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+<!-- Newsletter Start -->
+<div class="container-fluid bg-primary newsletter p-0">
+    <div class="container p-0">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-5 ps-lg-0 text-start wow fadeIn" data-wow-delay="0.2s">
+                <img class="img-fluid w-100" src="img/newsletter.jpg" alt="">
+            </div>
+            <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-5">
+                    <h1 class="mb-5">Join Our <span class="text-uppercase text-primary bg-white px-2">Property Digest</span></h1>
+                   
+                    <div class="position-relative w-100 mb-2">
+                        <form id="Newsletterform">
+                      <input class="form-control border-0 w-100 ps-4 pe-5" 
+                            placeholder="Enter Your Email" type="email" name="email" id="subemail" style="height: 60px;">
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-2 me-2" id="subbtn"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </form>
+                        </div>
+
+                    <p class="mb-0">Get property alerts, legal updates, and exclusive listings sent straight to your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <a href="index.html" class="d-inline-block mb-3">
+                    <h1 class="text-white">Alderwood</h1>
+                </a>
+                <p class="mb-0">Alderwood Holdings Limited Co. is a modern real estate platform simplifying property buying, selling, and legal ownership — entirely online, fully secure.</p>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <h5 class="text-white mb-4">Get In Touch</h5>
+                <p><i class="fa fa-map-marker-alt me-3"></i>London, United Kingdom</p>
+                <p><i class="fa fa-phone-alt me-3" href="tel:+447308312486"></i>+44 7308 312 486</p>
+                <p><i class="fa fa-envelope me-3" href="mailto:notifications@alderwoodholdings.com"></i>info@alderwood.co</p>
+               
+               
+      
+                <div class="d-flex pt-2">
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://www.facebook.com/DouglasandGordon" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://twitter.com/Douglas_Gordon" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2 me-2"
+     href="https://www.instagram.com/douglasandgordon" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a class="btn btn-outline-primary btn-square border-2"
+     href="https://www.linkedin.com/company/Douglas_Gordon" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+
+
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <h5 class="text-white mb-4">Quick Links</h5>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact</a>
+                <a class="btn btn-link" href="legalinfo.html">Legal Info</a>
+                <a class="btn btn-link" href="tc.html">Terms & Conditions</a>
+                <a class="btn btn-link" href="faqs.html">FAQs</a>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <h5 class="text-white mb-4">Our Services</h5>
+                <a class="btn btn-link" href="legalinfo.html#pl">Property Listings</a>
+                <a class="btn btn-link" href="legalinfo.html#dt">Digital Transfers</a>
+                <a class="btn btn-link" href="legalinfo.html#la">Legal Assistance</a>
+                <a class="btn btn-link" href="legalinfo.html#dh">Document Handling</a>
+                <a class="btn btn-link" href="legalinfo.html#c">Consultation</a>
+            </div>
+        </div>
+    </div>
+    <div class="container wow fadeIn" data-wow-delay="0.1s">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#!">Alderwood Holdings Ltd</a>, All Rights Reserved.
+                    Designed by <a class="border-bottom" href="mailto:notifications@alderwoodholdings.com">Noah Christopher</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="index.html">Home</a>
+                        <a href="legalinfo.html#pp">Cookies</a>
+                        <a href="contact.html">Help</a>
+                        <a href="faqs.html">FAQs</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script type="module" src="tools/auth/auth.mjs"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
